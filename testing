@@ -1,0 +1,83 @@
+zeros_array=np.zeros((10,10))
+print(type(zeros_array))
+x=0
+for i,j in zip(o,p):
+
+
+
+  for x in range(len(i)):
+
+    for y in range(len(j)):
+
+      try:
+        if i[x] == j[y]:
+
+          zeros_array[i[x]][[j[y]]]=zeros_array[i[x]][[j[y]]]+1
+          i.remove(i[x])
+          j.remove(j[y])
+      except:
+        pass
+  for x in range(len(i)):
+
+    for y in range(len(j)):
+
+      try:
+        if i[x] == j[y]:
+
+          zeros_array[i[x]][[j[y]]]=zeros_array[i[x]][[j[y]]]+1
+          i.remove(i[x])
+          j.remove(j[y])
+      except:
+        pass
+
+  for x in range(len(i)):
+
+    for y in range(len(j)):
+
+      try:
+        if i[x] == j[y]:
+
+          zeros_array[i[x]][[j[y]]]=zeros_array[i[x]][[j[y]]]+1
+          i.remove(i[x])
+          j.remove(j[y])
+      except:
+        pass
+
+  array_len=len(i)
+
+  for m in range(array_len):
+    zeros_array[i[m]][[j[m]]]=zeros_array[i[m]][[j[m]]]+1
+
+  # print("o:",i)
+  # print("p:",j)
+
+print(zeros_array)
+cm=zeros_array
+TP = np.diag(cm)
+print(TP)
+FP = np.sum(cm, axis=0) - TP
+print(FP)
+FN = np.sum(cm, axis=1) - TP
+print(FN)
+num_classes = 10
+TN = []
+for i in range(num_classes):
+    temp = np.delete(cm, i, 0)    # delete ith row
+    temp = np.delete(temp, i, 1)  # delete ith column
+    TN.append(sum(sum(temp)))
+print(TN)
+# l = 10000
+# for i in range(num_classes):
+#     print(TP[i] + FP[i] + FN[i] + TN[i])
+precision = TP/(TP+FP)
+print(precision)
+recall = TP/(TP+FN)
+print(recall)
+# specificity = TN/(TN+FP)
+# print(specificity)
+F1score= 2*((precision*recall)/(precision+recall))
+print(F1score)
+
+#two species
+
+#three species
